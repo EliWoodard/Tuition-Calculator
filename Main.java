@@ -12,7 +12,7 @@ import java.util.Scanner;
  * If the user does not enter any values, default values are used instead.
  *
  * @author Eli Woodard
- * @version 1.02
+ * @version 1.03
  */
 public class Main {
 
@@ -29,13 +29,13 @@ public class Main {
         System.out.println("\n-------------Press Enter to use Default Values:-------------\n"
                 + "| Regular credit:              | 380.45$ | \n"
                 + "| Overloaded creidt:           | 252$    | \n"
-                + "| Max credits before overload: | 16      | \n"
+                + "| Max credits before overload: | 15      | \n"
                 + "------------------------\n");
 
         double regularCreditCost = getInputOrDefault(scanner, "Enter the cost of a regular credit: ", 380.45);
         double overloadedCreditCost = getInputOrDefault(scanner, "Enter the cost of an overloaded credit: ", 252.0);
         int maxCreditsWithoutOverload = getInputOrDefault(scanner,
-                "Enter the maximum number of credits without being considered overloaded: ", 16);
+                "Enter the maximum number of credits without being considered overloaded: ", 15);
         int numCredits = getIntFromUser("Enter the number of semesters you want to calculate: ");
 
         double totalTuition = calculateTuition(regularCreditCost, overloadedCreditCost, maxCreditsWithoutOverload,
@@ -117,7 +117,7 @@ public class Main {
             value = scanner.nextInt();
             if (value <= 0) {
                 System.out.println("Invalid value entered, using default value.");
-                value = 16;
+                value = 15;
             }
         } while (value <= 0);
         return value;

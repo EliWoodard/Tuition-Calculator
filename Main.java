@@ -12,7 +12,7 @@ import java.util.Scanner;
  * If the user does not enter any values, default values are used instead.
  *
  * @author Eli Woodard
- * @version 1.01
+ * @version 1.02
  */
 public class Main {
 
@@ -214,7 +214,7 @@ public class Main {
         System.out.println("\n------------------------\n");
         System.out.printf("Total tuition: $%.2f\n", totalTuition);
         if (totalFees > 0) {
-            System.out.printf("Total fees: $%.2f\n", totalFees);
+            System.out.printf("Total fees: $%.2f (not important) \n", totalFees);
         }
         System.out.printf("Total cost: $%.2f\n", totalCost);
         System.out.println("\n------------------------\n");

@@ -1,6 +1,21 @@
 import java.util.Scanner;
 
+/**
+ * This program calculates the total tuition, fees, and cost for a specified
+ * number of semesters, based on the user's input
+ * of the cost of a regular credit, the cost of an overloaded credit, and the
+ * maximum number of credits without being considered overloaded.
+ * The program assumes the user is an undergraduate and not a resident.
+ * 
+ * @author Eli Woodard
+ */
 public class Main {
+
+    /**
+     * The main method of the program.
+     * 
+     * @param args The command-line arguments.
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -22,7 +37,8 @@ public class Main {
             overloadedCreditCost = originalOverloadedCreditCost;
         }
 
-        System.out.print("Enter the maximum number of credits without being considered overloaded (default " + originalMaxCreditsWithoutOverload + "): ");
+        System.out.print("Enter the maximum number of credits without being considered overloaded (default "
+                + originalMaxCreditsWithoutOverload + "): ");
         int maxCreditsWithoutOverload = scanner.nextInt();
         if (maxCreditsWithoutOverload <= 0) {
             maxCreditsWithoutOverload = originalMaxCreditsWithoutOverload;
@@ -38,7 +54,8 @@ public class Main {
             System.out.print("Enter the number of credits for semester " + i + ": ");
             int numCredits = scanner.nextInt();
             if (numCredits > maxCreditsWithoutOverload) {
-                totalTuition += ((numCredits - maxCreditsWithoutOverload) * overloadedCreditCost) + (maxCreditsWithoutOverload * regularCreditCost);
+                totalTuition += ((numCredits - maxCreditsWithoutOverload) * overloadedCreditCost)
+                        + (maxCreditsWithoutOverload * regularCreditCost);
             } else {
                 totalTuition += numCredits * regularCreditCost;
             }
